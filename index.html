@@ -181,47 +181,21 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Method</h2>
-        <!-- Your image here -->
-        <img src="static/images/ai1.jpg" alt="MY ALT TEXT"/>
+        <h2 class="title is-3">2. Method</h2>
         <div class="content has-text-justified">
+          <h4 class="title is-5">2.1 데이터 전처리 과정</h4>
+          <ul>
+            <li><strong>Target 생성</strong>: 수축기혈압 140mmHg 이상 또는 이완기혈압 90mmHg 이상인 경우를 고혈압(1), 그 외를 정상(0)으로 정의하였습니다.</li>
+            <li><strong>파생 변수 생성</strong>: 신장과 체중 데이터를 활용하여 체질량지수(BMI)를 산출하고, 대한비만학회 기준에 따라 비만도를 분류하였습니다.</li>
+            <li><strong>변수 정제</strong>: 시력, 청력, 치아 관련 지표 등 고혈압과 직접적 연관성이 낮은 변수들을 제거하여 모델의 복잡도를 낮추고 효율성을 높였습니다.</li>
+          </ul>
+          <h4 class="title is-5">2.2 사용한 인공지능 모델</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <strong>로지스틱 회귀 (Logistic Regression):</strong> 고혈압 여부(0 또는 1)를 예측하는 이진 분류에 최적화되어 있으며, 각 독립 변수(BMI, 혈당 등)가 결과에 미치는 가중치를 계수(Coefficient)로 확인할 수 있어 결과의 해석력이 높기 때문에 선정하였습니다.
           </p>
-        </div>
       </div>
-      <div class="item">
-        
-        <!-- Your image here -->
-        <!--
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        -->
-
-        <!-- Your image here -->
-        <!--
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-        -->
-        
-      <!-- Your image here -->
-      <!--
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-        -->
     </div>
   </div>
-</div>
 </div>
 </section>
 
@@ -233,45 +207,24 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Results</h2>
-        <div class="content has-text-justified">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </div>
+        <h2 class="title is-3">2.3 실험 결과 및 분석</h2>
         
-        <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-          <!--
-          <img src="static/images/mild.png" alt="MY ALT TEXT"/>
         <div class="content has-text-justified">
-          <p>
-            Description.
-          </p>
+          <h4 class="title is-5">실험 1: 비만 지표(BMI)와 고혈압의 상관관계 분석</h4>
+          <img src="static/images/BMI.png" alt="BMI 분석 결과" style="margin-bottom: 15px;"/>
+          <p>고혈압의 가장 강력한 위험 인자로 알려진 비만과 혈압의 관계를 분석하기 위해 바이올린 플롯을 활용하였습니다. 정상군(파란색)은 BMI 23 미만 구간에 밀집된 반면, 고혈압 환자군(빨간색)은 <strong>과체중(BMI 25)에서 1단계 비만</strong> 구간 사이에 훨씬 많은 데이터가 몰려있음을 확인하였습니다. 분포가 확연히 상향 이동(Upward Shift)된 양상을 보이며, 비만이 고혈압 발병의 핵심 결정 요인임을 입증합니다.</p>
+
+          <br><br>
+          <h4 class="title is-5">실험 2: 대사 지표(식전혈당 및 혈색소)와 고혈압의 관계</h4>
+          <img src="static/images/식전혈당.png" alt="혈당 및 혈색소 분석 결과" style="margin-bottom: 15px;"/>
+          <p>고혈압 환자군의 식전혈당 분포는 정상군에 비해 당뇨병 전단계 및 당뇨 확진(126mg/dL↑) 구간으로 치우쳐져 있습니다. 또한, 혈색소(Hb) 수치 분석 결과 고혈압 환자군의 최빈값이 정상인보다 약 <strong>0.2g/dL 이상 높게 형성</strong>되었습니다. 혈색소 수치의 상승은 혈액 점도를 높여 말초 혈관 저항을 증가시키므로, 혈압 상승의 간접적 원인이 될 수 있음을 확인하였습니다.</p>
+
+          <br><br>
+          <h4 class="title is-5">실험 3: 간 기능 지표(감마지티피)와 고혈압의 상관관계</h4>
+          <img src="static/images/감마지티피.png" alt="감마지티피 분석 결과" style="margin-bottom: 15px;"/>
+          <p>박스 플롯 비교 결과, 고혈압 환자군의 감마지티피 수치가 남성과 여성 모두에서 정상군보다 눈에 띄게 높았습니다. 임상적 위험 수치(100 IU/L)를 넘지 않더라도, <strong>정상 범위 내에서의 상대적 고수치</strong>가 고혈압군에서 훨씬 빈번하게 나타났습니다. 이는 감마지티피가 고혈압을 유발하는 생활 습관 지표(음주, 비만 등)를 대변하고 있음을 보여줍니다.</p>
         </div>
-          
-          <img src="static/images/label_shifts.png" alt="MY ALT TEXT"/>
-        <div class="content has-text-justified">
-          <p>
-            Description.
-          </p>
-        </div>
-          
-        <img src="static/images/batch_size1.png" alt="MY ALT TEXT"/>
-        <div class="content has-text-justified">
-          <p>
-            Description.
-          </p>
-        </div>
-          
-        <img src="static/images/biased_scenario.png" alt="MY ALT TEXT"/>
-        <div class="content has-text-justified">
-          <p>
-            Description.
-          </p>
-        </div>
-        -->
+
       </div>
     </div>
   </div>
